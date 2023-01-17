@@ -1,0 +1,26 @@
+<div class="container mt-5">
+    <br>
+    <h2 class="">Login form</h2>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="mb-3 mt-3">
+        <label for="email">Email:</label>
+        <input type="email" class="form-control" id="email" placeholder="Enter email" formControlName="email">
+        <div *ngIf="submitted && f.email?.errors" class="text-danger small"
+          [ngClass]="{'is-invalid': submitted && f.email?.errors }">
+          <div *ngIf="f.email.errors?.required">Email is required</div>
+          <div *ngIf="f.email.errors?.email">Please enter valid email</div>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="pwd">Password:</label>
+        <input type="password" class="form-control" id="pwd" placeholder="Enter password" formControlName="password">
+        <div *ngIf="submitted && f.password?.errors" class="text-danger small"
+          [ngClass]="{'is-invalid': submitted && f.password?.errors }">
+          <div *ngIf="f.password.errors?.required">Password is required</div>
+          <div *ngIf="f.password.errors?.minLength">Password atleast 2 digits</div>
+        </div>
+      </div>
+      
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
