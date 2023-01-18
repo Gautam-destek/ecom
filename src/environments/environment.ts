@@ -1,4 +1,4 @@
 export const environment = {
     production: false,
-    baseurl : "http://localhost/unstoppable/Angular/"
+    baseurl : "http://localhost/unstoppable/angular/"
   };
